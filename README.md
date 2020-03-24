@@ -1,16 +1,13 @@
 # Nest Blog
 
-> A simple blog - Blog and Admin.
+> Nuxtjs + Typescript + Koa Starter.
+> No typescript/runtime
 
 
-## Include
- 
-- [x] User (register/login)
-- [x] Content (crud)
-- [x] Category (crud)
-- [ ] Tags (crud)
-- [ ] Comments (crud)
-- [ ] ViewsCount (include view user)
+## Todo
+- [ ] Can't use ts file in store.
+- [ ] Can't use ts file in middleware.
+
 
 ## Build Setup
 
