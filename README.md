@@ -1,4 +1,4 @@
-# Nest Blog
+# Nuxt-ts-starter
 
 > Nuxtjs + Typescript + Koa Starter.
 > No typescript/runtime
