@@ -28,7 +28,7 @@
     "@nuxtjs/axios": "5.9.5",
     "caniuse-lite": "^1.0.30001037",
     "cross-env": "7.0.0",
-    "dayjs": "1.8.21",
+    "dayjs": "1.8.23",
     "koa": "2.11.0",
     "koa-router": "8.0.8",
     "less": "^2.7.3",
