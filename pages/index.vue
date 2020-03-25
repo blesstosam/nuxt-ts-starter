@@ -10,9 +10,9 @@
   <div class="container page-index">
     <h2>分页请求数据的demo</h2>
     <Card class="mx-auto" tile>
-      <List v-for="item in list" :key="item._id" border>
-        <ListItem>{{ item.title }}</ListItem>
-      </List>
+      <li v-for="item in list" :key="item._id">
+        {{ item.title }}
+      </li>
     </Card>
 
     <Page class="pager" :total="100" @on-change="handlePageChange" />

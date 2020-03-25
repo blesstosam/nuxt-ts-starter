@@ -18,7 +18,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/styles/mytheme.less'],
   /*
    ** Plugins to load before mounting the App
    */
