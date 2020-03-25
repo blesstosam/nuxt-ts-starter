@@ -10,7 +10,7 @@
   <div class="container page-index">
     <h2>分页请求数据的demo</h2>
     <Card class="mx-auto" tile>
-      <List v-for="item in list" :key="item._id" header="Header" footer="Footer" border>
+      <List v-for="item in list" :key="item._id" border>
         <ListItem>{{ item.title }}</ListItem>
       </List>
     </Card>
@@ -21,8 +21,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { contentList, categoryList } from '../api/user/index';
-import { Pager } from '../types';
+import { Pager } from '@/types';
+import { contentList } from '@/api/user';
 
 @Component({
   async asyncData() {
@@ -31,20 +31,16 @@ import { Pager } from '../types';
       pageSize: 10,
       total: 0
     };
-    const [res, categorys] = await Promise.all([
-      await contentList({ pageSize: pager.pageSize, pageNum: pager.current }),
-      await categoryList()
-    ]);
-    if (res.code === 200 && categorys.code === 200) {
+    const res = await contentList({ pageSize: pager.pageSize, pageNum: pager.current });
+    if (res.code === 200) {
       const { list = [], total = 0 } = res.data;
       pager.total = total;
       return {
         list,
-        pager,
-        categoryList: [{ _id: 'all', categoryDesc: '全部' }, ...categorys.data.list]
+        pager
       };
     }
-    return { list: [{ _id: 1, title: '111', content: '222' }], pager, categoryList: [] };
+    return { list: [], pager, categoryList: [] };
   }
 
   // middleware: 'logger'

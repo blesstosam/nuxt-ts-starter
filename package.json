@@ -10,7 +10,8 @@
     "start": "cross-env NODE_ENV=production ts-node -T server/index.ts",
     "generate": "nuxt generate",
     "lint": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore .",
-    "test": "ava",
+    "test:unit": "ava",
+    "test:ci": "npm run lint && ava",
     "pulish": "nuxt build && npm start"
   },
   "husky": {
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "5.9.5",
+    "caniuse-lite": "^1.0.30001037",
     "cross-env": "7.0.0",
     "dayjs": "1.8.21",
     "koa": "2.11.0",

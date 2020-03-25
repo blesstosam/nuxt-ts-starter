@@ -15,31 +15,20 @@ export function logout(param: { username: string }): Promise<AjaxResponse> {
 // 内容
 export function contentList(
   param: { pageSize: number; pageNum: number } = { pageSize: 10, pageNum: 1 }
-): Promise<AjaxResponse> {
-  return httpInstance.get('/content/list', param);
-}
-export function contentDetail(param: { id: string }): Promise<AjaxResponse> {
-  return httpInstance.get(`/content/${param.id}`, {});
-}
-export function createContent(param: {
-  user: string;
-  title: string;
-  desc?: string;
-  content: string;
-  category: string;
-}): Promise<AjaxResponse> {
-  return httpInstance.post('/content/create', param);
-}
-
-// 内容分类
-export function categoryList(
-  param: { pageSize: number; pageNum: number } = { pageSize: 10, pageNum: 1 }
-): Promise<AjaxResponse> {
-  return httpInstance.get('/category/list', param);
-}
-export function createCategory(param: {
-  categoryTitle: string;
-  categoryDesc?: string;
-}): Promise<AjaxResponse> {
-  return httpInstance.post('/category/create', param);
+): AjaxResponse {
+  const { pageNum } = param;
+  if (pageNum === 1) {
+    return {
+      code: 200,
+      data: {
+        list: [
+          { _id: '1', title: '111', content: '111' },
+          { _id: '2', title: '222', content: '222' }
+        ]
+      },
+      msg: ''
+    };
+  } else if (pageNum === 2) {
+    return { code: 200, data: { list: [{ _id: '3', title: '333', content: '333' }] }, msg: '' };
+  }
 }

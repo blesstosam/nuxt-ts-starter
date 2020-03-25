@@ -16,8 +16,8 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
-  async asyncData() {}
-
+  async asyncData() {},
+  layout: 'new-layout'
   // middleware: 'logger'
 })
 export default class AdminPage extends Vue {

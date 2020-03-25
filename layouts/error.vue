@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <div>
     <h1 v-if="error.statusCode === 404">
       {{ pageNotFound }}
     </h1>
@@ -9,7 +9,7 @@
     <NuxtLink to="/">
       Home page
     </NuxtLink>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -27,6 +27,7 @@ export default {
       otherError: 'An error occurred'
     };
   },
+  // Set Meta Tags for this Page
   head() {
     const title = this.error.statusCode === 404 ? this.pageNotFound : this.otherError;
     return {

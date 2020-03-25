@@ -50,7 +50,7 @@ export default class LoginCard extends Vue {
       this.$store.commit('UPDATE_USER', res.data);
       this.isShow = false;
     } else {
-      alert(res.msg);
+      // alert(res.msg);
     }
   }
 

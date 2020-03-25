@@ -1,3 +1,4 @@
+/* eslint-disable-next-line */
 module.exports = {
   mode: 'universal',
   head: {
@@ -54,6 +55,7 @@ module.exports = {
   // server: {
   //   port: 3002
   // }
+  // this middleware will be called for every route change.
   // router: {
   //   middleware: 'logger'
   // }
