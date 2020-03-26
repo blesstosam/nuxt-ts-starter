@@ -8,9 +8,9 @@ const app = new Koa();
 const router = new Router();
 
 /* eslint-disable-next-line */
-router.get('/api', (ctx: Context, next: Function) => {
+router.get('/api/user/:username', (ctx: Context, next: Function) => {
   // ctx.router available
-  ctx.body = { a: 1 };
+  ctx.body = { username: ctx.params.username, age: 18, salary: 10000 };
 });
 
 app.use(router.routes()).use(router.allowedMethods());
@@ -41,7 +41,7 @@ async function start() {
   app.listen(port, host);
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
-    badge: true
+    badge: true,
   });
 }
 

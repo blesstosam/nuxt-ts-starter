@@ -18,18 +18,18 @@ import LoginCard from '@/components/LoginCard.vue';
 const defaultRoutes = [
   {
     title: '首页',
-    to: '/'
-  }
+    to: '/',
+  },
 ];
 const adminRoutes = [
   {
     title: 'Admin',
-    to: '/admin'
-  }
+    to: '/admin',
+  },
 ];
 
 @Component({
-  components: { LoginCard }
+  components: { LoginCard },
 })
 export default class Default extends Vue {
   mounted() {

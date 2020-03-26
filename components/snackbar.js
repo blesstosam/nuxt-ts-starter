@@ -13,9 +13,9 @@ function init(snackbarText, color) {
       return {
         snackbar: true,
         color: '',
-        snackbarText: ''
+        snackbarText: '',
       };
-    }
+    },
   });
 
   document.body.appendChild(_dom.$el);

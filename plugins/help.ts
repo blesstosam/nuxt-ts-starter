@@ -5,7 +5,7 @@ function install(Vue: any) {
   Vue.mixin({
     created() {
       // console.log('comes from help plugin...')
-    }
+    },
   });
 }
 

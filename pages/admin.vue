@@ -1,26 +1,27 @@
-<style lang="stylus">
-.page-index
-  .pager
-    position fixed
-    bottom 85px
-    left 0
-    right 0
-</style>
+<style lang="stylus"></style>
 <template>
-  <div class="container page-index">
+  <div>
     <h2>{{ msg }}</h2>
+    <h3>{{ user }}</h3>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { NuxtAppOptions } from '@nuxt/types';
+import { getUserinfo } from '../api/user';
 
 @Component({
-  async asyncData() {},
-  layout: 'new-layout'
+  /* eslint-disable-next-line */
+  async asyncData(context: NuxtAppOptions) {
+    const user = await getUserinfo({ username: 'sam' });
+    return { user };
+  },
+  layout: 'new-layout',
   // middleware: 'logger'
 })
 export default class AdminPage extends Vue {
   msg = 'this is admin page!';
+  user: { [k: string]: string | number };
 }
 </script>

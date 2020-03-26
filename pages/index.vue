@@ -1,21 +1,17 @@
 <style lang="stylus">
 .page-index
-  .pager
-    position fixed
-    bottom 85px
-    left 0
-    right 0
+  padding: 24px
 </style>
 <template>
-  <div class="container page-index">
+  <div class="page-index">
     <h2>分页请求数据的demo</h2>
     <Card class="mx-auto" tile>
       <li v-for="item in list" :key="item._id">
         {{ item.title }}
       </li>
     </Card>
-
-    <Page class="pager" :total="100" @on-change="handlePageChange" />
+    <Page :total="100" @on-change="handlePageChange" />
+    <h2><nuxt-link to="/admin">Admin</nuxt-link></h2>
   </div>
 </template>
 
@@ -29,7 +25,7 @@ import { contentList } from '@/api/user';
     const pager: Pager = {
       current: 1,
       pageSize: 10,
-      total: 0
+      total: 0,
     };
     const res = await contentList({ pageSize: pager.pageSize, pageNum: pager.current });
     if (res.code === 200) {
@@ -37,11 +33,11 @@ import { contentList } from '@/api/user';
       pager.total = total;
       return {
         list,
-        pager
+        pager,
       };
     }
     return { list: [], pager, categoryList: [] };
-  }
+  },
 
   // middleware: 'logger'
 })

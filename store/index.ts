@@ -22,19 +22,19 @@ try {
 }
 
 export const state = () => ({
-  user
+  user,
 });
 
 export type RootState = ReturnType<typeof state>;
 
 export const getters: GetterTree<RootState, RootState> = {
-  username: (state) => state.user.username
+  username: (state) => state.user.username,
 };
 
 export const mutations: MutationTree<RootState> = {
   UPDATE_USER(state, user: User) {
     state.user.username = user.username;
-  }
+  },
 };
 
 // export const actions: ActionTree<RootState, RootState> = {

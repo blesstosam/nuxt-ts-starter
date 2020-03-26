@@ -9,10 +9,10 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Nuxt-TS-STARTER'
-      }
+        content: 'Nuxt-TS-STARTER',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   loading: { color: '#fff' },
   /*
@@ -30,10 +30,7 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
-  ],
+  modules: [],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -50,13 +47,13 @@ module.exports = {
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
       }
-    }
-  }
-  // server: {
-  //   port: 3002
-  // }
+    },
+  },
   // this middleware will be called for every route change.
-  // router: {
-  //   middleware: 'logger'
-  // }
+  router: {
+    middleware: 'test',
+  },
+  server: {
+    port: 3001,
+  },
 };

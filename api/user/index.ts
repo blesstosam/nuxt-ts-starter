@@ -23,12 +23,16 @@ export function contentList(
       data: {
         list: [
           { _id: '1', title: '111', content: '111' },
-          { _id: '2', title: '222', content: '222' }
-        ]
+          { _id: '2', title: '222', content: '222' },
+        ],
       },
-      msg: ''
+      msg: '',
     };
   } else if (pageNum === 2) {
     return { code: 200, data: { list: [{ _id: '3', title: '333', content: '333' }] }, msg: '' };
   }
+}
+
+export function getUserinfo(param: { username: string }): Promise<AjaxResponse> {
+  return httpInstance.get(`/api/user/${param.username}`);
 }

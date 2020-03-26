@@ -12,7 +12,7 @@ export class HttpService {
   constructor(url: string) {
     this.service = axios.create({
       baseURL: url,
-      timeout: 30000
+      timeout: 30000,
     });
 
     // request拦截器
@@ -83,7 +83,7 @@ export class HttpService {
     });
   }
 
-  get(url: string, param: Object): Promise<any> {
+  get(url: string, param?: Object): Promise<any> {
     return new Promise((resolve) => {
       this.service.get(url, { params: param || {} }).then(
         (res: AxiosResponse) => {
@@ -108,7 +108,7 @@ export class HttpService {
     return new Promise((reslove) => {
       this.service
         .post(url, data, {
-          headers: { 'Content-Type': 'multipart/form-data;boundary = ' + new Date().getTime() }
+          headers: { 'Content-Type': 'multipart/form-data;boundary = ' + new Date().getTime() },
         })
         .then(
           (res: any) => {

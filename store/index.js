@@ -10,7 +10,7 @@ try {
       window.__NUXT__.state.user = {
         username: _user.username,
         isAdmin: _user.isAdmin,
-        id: _user.id
+        id: _user.id,
       };
     }
     // in server side
@@ -29,7 +29,7 @@ export const state = () => {
 export const mutations = {
   UPDATE_USER(state, user) {
     state.user = user;
-  }
+  },
 };
 
 // 将服务器的数据传递给客户端
