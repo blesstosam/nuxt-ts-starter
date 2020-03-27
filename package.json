@@ -26,13 +26,13 @@
     ]
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "0.19.2",
     "cross-env": "7.0.0",
     "dayjs": "1.8.23",
     "koa": "2.11.0",
     "koa-router": "8.0.8",
-    "less": "^2.7.3",
-    "less-loader": "^4.0.6",
+    "less": "2.7.3",
+    "less-loader": "4.0.6",
     "nuxt": "2.12.1",
     "sha256": "0.2.0",
     "typescript": "3.8.3",
