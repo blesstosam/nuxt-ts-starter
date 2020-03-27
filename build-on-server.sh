@@ -18,12 +18,12 @@ git checkout ${deploy_branch} && git pull
 fi
 
 # 使用ts-node直接启动程序
-# todo 会报错
-# command -v pm2 >/dev/null 2>&1 || { echo >&2 "未安装pm2"; exit 1; }
-# echo "--------------------------- npm run publish:ts ------------------------"
-# pm2 start npm --name ${repo_name} -- run publish:ts
+command -v pm2 >/dev/null 2>&1 || { echo >&2 "未安装pm2"; exit 1; }
+echo "--------------------------- npm run publish:ts ------------------------"
+pm2 start npm --name ${repo_name} -- run publish:ts
 
 # 先打包再启动
+# todo 这个不会打包koa的代码
 command -v pm2 >/dev/null 2>&1 || { echo >&2 "未安装pm2"; exit 1; }
 echo "--------------------------- npm run publish ---------------------------"
 pm2 start npm --name ${repo_name} -- run publish
