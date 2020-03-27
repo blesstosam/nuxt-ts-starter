@@ -5,8 +5,7 @@
 
 
 ## Todo
-- [ ] Can't use ts file in store.
-- [ ] Can't use ts file in middleware.
+
 
 
 ## Build Setup

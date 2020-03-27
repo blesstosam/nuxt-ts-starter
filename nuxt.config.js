@@ -31,11 +31,6 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {},
 
   /*
    ** Build configuration
@@ -44,9 +39,10 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
+    /* eslint-disable-next-line */
     extend(config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-      }
+      // if (ctx.isDev && ctx.isClient) {
+      // }
     },
   },
   // this middleware will be called for every route change.

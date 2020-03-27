@@ -23,12 +23,14 @@ async function start() {
 
   const { host = process.env.HOST || '127.0.0.1', port = process.env.PORT } = nuxt.options.server;
 
+  // nuxt.ready() 方法一定要放在前面先执行
+  // 否则 middleware和store的ts文件无效
+  await nuxt.ready();
+
   // Build in development
   if (config.dev) {
     const builder = new Builder(nuxt);
     await builder.build();
-  } else {
-    await nuxt.ready();
   }
 
   app.use((ctx) => {
