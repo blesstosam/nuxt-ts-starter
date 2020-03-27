@@ -7,7 +7,8 @@
   "scripts": {
     "serve": "cross-env NODE_ENV=development nodemon server/index.ts --watch server",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production ts-node -T server/index.ts",
+    "start": "nuxt start",
+    "start:ts": "cross-env NODE_ENV=production ts-node -T server/index.ts",
     "generate": "nuxt generate",
     "publish": "nuxt build && npm start",
     "lint": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore .",
