@@ -1,0 +1,101 @@
+# 构建阶段
+stages:
+  - install_deps
+  - test
+  - build
+  - deploy_test
+#  - deploy_production
+
+# node 版本
+image: node:11.10.1
+
+# 缓存（默认情况下，每个pipelines和jobs中可以共享一切，从GitLab 9.0开始）
+cache:
+#  key: ${CI_BUILD_REF_NAME}
+  # windows下？？？
+#  key: "%CI_COMMIT_REF_SLUG%"
+#  key: ${CI_BUILD_STAGE}
+# 缓存每个分支
+#  key: "$CI_COMMIT_REF_NAME"
+  paths:
+    # 缓存node_mudules将大大提高ci运行的速度
+    - node_modules/
+
+# 构建工作-安装依赖
+job_install_deps:
+  stage: install_deps
+  # 匹配使用哪个tag的runner(注册时填写的)
+  tags:
+    - xxgd
+  only:
+    # 在merge request的时候运行job 但是要求gitlab版本比较高
+    # Pipelines for merge requests have the following requirements and limitations:
+    # As of GitLab 11.10, pipelines for merge requests require GitLab Runner 11.9 or higher due to the recent refspecs changes.
+    # Pipelines for merge requests are incompatible with CI/CD for external repositories.
+    #- merge_requests
+    - merge_requests
+  script:
+    - npm set registry https://registry.npm.taobao.org
+    - npm install
+
+
+# 构建工作-运行测试用例
+job_test:
+  stage: test
+  tags:
+    - xxgd
+  only:
+    - merge_requests
+  script:
+    - npm run test:ci
+
+
+# 构建工作-打包生产包
+job_build:
+  stage: build
+  # 匹配使用哪个tag的runner
+  tags:
+    - xxgd
+  # 所有操作只在如下分支上进行
+  only:
+    - master
+  script:
+    - chmod +x build.sh
+    - bash ./build.sh nuxt-demo
+  # 工件，可以缓存在gitlab的流水线记录中，供直接下载
+  # artifacts:
+  #   # 使用当前stage和分支名称作为存档名称
+  #   # name: "${CI_JOB_NAME}_${CI_COMMIT_REF_NAME}"
+  #   name: "nuxt-demo"
+  #   # 工件缓存的有效时间
+  #   expire_in: 3 days
+  #   # 路径
+  #   paths:
+  #     # 工件指向的目录，这里打包后的路径
+  #     - nuxt-demo
+
+
+# 构建工作-打包测试服务器包
+job_deploy_test:
+  stage: deploy_test
+  tags:
+    - xxgd
+  only:
+    - dev
+  script:
+    - chmod +x build.sh
+    - bash ./build.sh nuxt-demo
+  # artifacts:
+  #   name: "nuxt-demo-test"
+  #   expire_in: 3 days
+  #   paths:
+  #     - nuxt-demo
+
+
+# 构建工作-部署生产服务器
+#job_deploy_production:
+#  stage: deploy_production
+#  only:
+#    - master
+#  script:
+#    - bash scripts/deploy/deploy.sh
