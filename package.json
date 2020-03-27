@@ -8,9 +8,9 @@
     "serve": "cross-env NODE_ENV=development nodemon server/index.ts --watch server",
     "build": "nuxt build",
     "start": "nuxt start",
-    "start:ts": "cross-env NODE_ENV=production ts-node -T server/index.ts",
-    "generate": "nuxt generate",
     "publish": "nuxt build && npm start",
+    "publish:ts": "cross-env NODE_ENV=production ts-node -T server/index.ts",
+    "generate": "nuxt generate",
     "lint": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore .",
     "test:unit": "ava",
     "test:ci": "npm run lint && ava"
