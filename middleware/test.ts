@@ -1,11 +1,11 @@
-// import {NuxtAppOptions} from '@nuxt/types'
+import {NuxtAppOptions} from '@nuxt/types'
 /* eslint-disable */
 export default function (
   // context
   // The context provides additional objects/params from Nuxt to Vue components
   // and is available in special nuxt lifecycle areas like
   // asyncData, fetch, plugins, middleware and nuxtServerInit.
-  context
+  context: NuxtAppOptions
 ) {
   const {
     app, // The root Vue instance options that includes all your plugins

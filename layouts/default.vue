@@ -45,7 +45,7 @@ export default class Default extends Vue {
   }
 
   @Watch('userInfo')
-  handleLogin(val) {
+  handleLogin(val: any) {
     if (val.username && val.isAdmin) {
       this.items = [...this.items, ...adminRoutes];
     }

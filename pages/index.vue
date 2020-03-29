@@ -19,11 +19,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Pager } from '@/types';
 import { contentList } from '@/api/user';
+import {NuxtAppOptions} from '@nuxt/types'
 
 @Component({
-  async asyncData() {
+  async asyncData(context: NuxtAppOptions) {
+    const {pageNum} = context.query
     const pager: Pager = {
-      current: 1,
+      current: pageNum ? Number(pageNum) : 1,
       pageSize: 10,
       total: 0,
     };
