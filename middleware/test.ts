@@ -1,4 +1,4 @@
-import {NuxtAppOptions} from '@nuxt/types'
+import { NuxtAppOptions } from '@nuxt/types';
 /* eslint-disable */
 export default function (
   // context
