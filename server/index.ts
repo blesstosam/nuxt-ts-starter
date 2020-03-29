@@ -28,6 +28,7 @@ async function start() {
   await nuxt.ready();
 
   // Build in development
+  // dev 模式下不需要先npm run build 是因为这里的代码写了
   if (config.dev) {
     const builder = new Builder(nuxt);
     await builder.build();

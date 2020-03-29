@@ -9,7 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "publish": "nuxt build && npm start",
-    "publish:ts": "cross-env NODE_ENV=production ts-node -T server/index.ts",
+    "publish:ts": "nuxt build && cross-env NODE_ENV=production ts-node -T server/index.ts",
     "generate": "nuxt generate",
     "lint": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore .",
     "test:unit": "ava",
