@@ -1,5 +1,5 @@
 /* eslint-disable-next-line */
-let baseUrl = '';
+let baseUrl = process.env.API_URL_DEV;
 
 switch (process.env.NODE_ENV) {
   case 'production':

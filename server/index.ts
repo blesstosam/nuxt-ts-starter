@@ -4,6 +4,10 @@ const consola = require('consola');
 const { Nuxt, Builder } = require('nuxt');
 const Router = require('koa-router');
 
+// load env from .env file
+const dotenv = require("dotenv")
+dotenv.config()
+
 const app = new Koa();
 const router = new Router();
 

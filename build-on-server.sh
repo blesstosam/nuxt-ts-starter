@@ -1,6 +1,6 @@
 #!/bin/sh
 repo_name="nuxt-demo"
-repo_url="http://192.168.3.225/xxgd/nuxt-demo/"
+repo_url="http://xxx.xxx.x.xxx/blesstosam/nuxt-demo/"
 # 发布的分支
 deploy_branch="master"
 # 部署的位置
