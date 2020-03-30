@@ -32,11 +32,15 @@ fi
 
 # 使用ts-node直接启动程序
 command -v pm2 >/dev/null 2>&1 || { echo >&2 "未安装pm2"; exit 1; }
-echo "--------------------------- npm run publish:ts ------------------------"
-restartPm2Script ${repo_name} publish:ts
+echo "--------------------------- npm run build:打包程序 ------------------------"
+npm run build
+echo "--------------------------- npm run start:ts:用ts-node启动程序 ------------------------"
+restartPm2Script ${repo_name} start:ts
 
 # 先打包再启动
 # todo 这个不会打包koa的代码
 # command -v pm2 >/dev/null 2>&1 || { echo >&2 "未安装pm2"; exit 1; }
-# echo "--------------------------- npm run publish ---------------------------"
-# restartPm2Script ${repo_name} publish
+# echo "--------------------------- npm run build:打包程序 ------------------------"
+# npm run build
+# echo "--------------------------- npm run start ---------------------------"
+# restartPm2Script ${repo_name} start
