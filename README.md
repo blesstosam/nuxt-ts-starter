@@ -27,3 +27,5 @@ $ npm run generate
 
 ## lint-staged v8.2.1 不要升级
 会导致@babel/runtime 被删除导致报错
+
+## tsconfig.json 里的 "module": "esnext" 要注释掉 否则无法识别 import 语法
