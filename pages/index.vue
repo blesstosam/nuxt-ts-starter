@@ -18,6 +18,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { NuxtAppOptions } from '@nuxt/types';
+import axios from 'axios';
 import { Pager } from '@/types';
 import { contentList } from '@/api/user';
 
@@ -51,6 +52,10 @@ export default class PagesIndex extends Vue {
   pager: Pager;
   categoryList: any[];
   activeCategoryIndex = 0;
+
+  async mounted() {
+    await axios.post('/api/user/new', { username: 'sam' });
+  }
 
   get totalPages(): number {
     return Math.ceil(this.pager.total / this.pager.pageSize);

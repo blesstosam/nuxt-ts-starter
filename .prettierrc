@@ -1,6 +1,8 @@
 {
-  "semi": true,
-  "arrowParens": "always",
   "singleQuote": true,
-  "printWidth": 100
+  "semi": true,
+  "proseWrap": "never",
+  "printWidth": 100,
+  "endOfLine": "auto",
+  "arrowParens": "always"
 }
