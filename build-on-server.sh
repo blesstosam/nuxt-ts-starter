@@ -23,12 +23,19 @@ function restartPm2Script() {
 if [ ! -d "${deploy_path}/${repo_name}" ];then
 echo "--------------------------- git 初始化仓库 ------------------------"
 cd ${deploy_path}
-git clone ${repo_url} && git checkout ${deploy_branch} && cd ${repo_name}
+git clone ${repo_url}
+echo "--------------------------- 切换到指定分支 ------------------------"
+cd ${repo_name} && git checkout ${deploy_branch}
+echo "--------------------------- 安装依赖 ------------------------"
+npm i --registry https://registry.npm.taobao.org
 else
 echo "--------------------------- git pull 最新代码 ------------------------"
 cd ${deploy_path}/${repo_name}
 git checkout ${deploy_branch} && git pull
+echo "--------------------------- 安装依赖 ------------------------"
+npm i --registry https://registry.npm.taobao.org
 fi
+
 
 # 使用ts-node直接启动程序
 command -v pm2 >/dev/null 2>&1 || { echo >&2 "未安装pm2"; exit 1; }
