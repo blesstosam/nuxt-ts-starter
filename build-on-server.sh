@@ -31,7 +31,7 @@ npm i --registry https://registry.npm.taobao.org
 else
 echo "--------------------------- git pull 最新代码 ------------------------"
 cd ${deploy_path}/${repo_name}
-git checkout ${deploy_branch} && git pull
+git checkout ${deploy_branch} && git checkout . && git pull
 echo "--------------------------- 安装依赖 ------------------------"
 npm i --registry https://registry.npm.taobao.org
 fi
