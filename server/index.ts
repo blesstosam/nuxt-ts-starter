@@ -1,5 +1,6 @@
-import Koa, { Context } from 'koa';
+import Koa from 'koa';
 import { koaRes } from './middleware/res';
+import { useUser } from './router/use-user';
 const consola = require('consola');
 const { Nuxt, Builder } = require('nuxt');
 const Router = require('koa-router');
@@ -10,23 +11,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = new Koa();
+const router = new Router();
 
 app.use(bodyParser());
 
+useUser(router);
+
 app.use(koaRes);
-
-const router = new Router();
-
-/* eslint-disable-next-line */
-router.get('/api/user/:username', async (ctx: Context, next: Function) => {
-  ctx.state = { username: ctx.params.username, age: 18, salary: 10000 };
-});
-
-router.post('/api/user/new', (ctx: Context) => {
-  // @ts-ignore
-  const { username } = ctx.request.body;
-  ctx.state = { username };
-});
 
 app.use(router.routes()).use(router.allowedMethods());
 
