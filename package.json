@@ -16,6 +16,14 @@
     "test:unit": "ava",
     "test:ci": "npm run lint && ava"
   },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "proseWrap": "never",
+    "printWidth": 100,
+    "endOfLine": "auto",
+    "arrowParens": "always"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
