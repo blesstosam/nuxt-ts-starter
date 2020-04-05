@@ -27,6 +27,7 @@
     ]
   },
   "dependencies": {
+    "@nuxt/typescript-build": "0.6.2",
     "axios": "0.19.2",
     "cross-env": "7.0.0",
     "dayjs": "1.8.23",
@@ -50,7 +51,6 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "0.6.2",
     "@nuxtjs/eslint-config-typescript": "1.0.2",
     "@nuxtjs/eslint-module": "1.1.0",
     "@types/dottie": "^2.0.3",
