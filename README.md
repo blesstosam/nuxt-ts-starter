@@ -2,6 +2,7 @@
 
 - Nuxtjs + Typescript + Koa Starter.  
 - No typescript/runtime.(没有用这个依赖是可以更灵活地拓展后台代码)
+- build.sh 是自动部署脚本，部署工具是pm2。可以配合gitlab流水线进行自动打包部署。
 
 
 ## Todo
