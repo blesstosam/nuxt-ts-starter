@@ -1,7 +1,7 @@
 # Nuxt-ts-starter
 
-> Nuxtjs + Typescript + Koa Starter.
-> No typescript/runtime
+- Nuxtjs + Typescript + Koa Starter.  
+- No typescript/runtime.(没有用这个依赖是可以更灵活地拓展后台代码)
 
 
 ## Todo

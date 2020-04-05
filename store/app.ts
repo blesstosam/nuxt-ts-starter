@@ -1,5 +1,4 @@
-import { GetterTree, ActionTree } from 'vuex';
-/* eslint-disable-next-line */
+import { GetterTree } from 'vuex';
 import { RootState } from './index';
 
 export const state = () => ({
@@ -13,8 +12,6 @@ export const getters: GetterTree<AppModuleState, RootState> = {
   nameAndMore: (state, getters, rootState) => `${rootState.user.username}: ${state.more}`,
 };
 
-export const actions: ActionTree<AppModuleState, RootState> = {
-  printRootState() {
-    // console.log('accessing rootState:', rootState.user.username);
-  },
-};
+// export const mutations: MutationTree<AppModuleState> = {
+
+// };

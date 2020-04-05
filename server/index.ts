@@ -1,10 +1,9 @@
 import Koa from 'koa';
-import { koaRes } from './middleware/res';
+import Router from 'koa-router';
 import { useUser } from './router/use-user';
+import { initMiddlewre } from './middleware/index';
 const consola = require('consola');
 const { Nuxt, Builder } = require('nuxt');
-const Router = require('koa-router');
-const bodyParser = require('koa-bodyparser');
 
 // load env from .env file
 const dotenv = require('dotenv');
@@ -13,12 +12,9 @@ dotenv.config();
 const app = new Koa();
 const router = new Router();
 
-app.use(bodyParser());
+initMiddlewre(app);
 
 useUser(router);
-
-app.use(koaRes);
-
 app.use(router.routes()).use(router.allowedMethods());
 
 const config = require('../nuxt.config.js');
