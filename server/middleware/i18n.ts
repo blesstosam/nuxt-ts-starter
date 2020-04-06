@@ -5,11 +5,12 @@ import i18n from 'koa-i18n';
 import koaLocale from 'koa-locale';
 import Koa from 'koa';
 
-// todo need to fix
 export function initI18n(app: Koa) {
   koaLocale(app);
   app.use(
     i18n(app, {
+      // todo need to fix
+      // locale 的文件要能和vue的i18n插件共享 所以要export default 出来
       directory: path.join(__dirname, '../../locale'),
       // extension: '.js',
       locales: ['zh-CN', 'en'], //  `zh-CN` defualtLocale, must match the locales to the filenames

@@ -22,6 +22,7 @@ export function createRateLimiter(opts: RateLimiterOpts): Middleware {
         return true;
       }
     },
+    // todo remove???
     keyGenerator(ctx: Context): string {
       const sha1 = crypto.createHash('sha1');
       if (opts.generateKey) {

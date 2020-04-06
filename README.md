@@ -5,7 +5,14 @@
 - build.sh 是自动部署脚本，部署工具是pm2。可以配合gitlab流水线进行自动打包部署。
 
 
-## Todo
+## Feature
+- Koa server support
+- Nuxt server renderer
+- Complete Typescript development experience
+- I18n both in server or client
+- CSRF support
+- Session support
+- Rate limit support
 
 
 
@@ -15,12 +22,20 @@
 # install dependencies
 $ npm run install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+# serve with hot reload at localhost:3001
+$ npm run server
 
-# build for production and launch server
+# build for production
 $ npm run build
-$ npm run start
+
+# start server
+$ npm run start:ts
+
+# test
+$ npm run test:ci
+
+# publish
+$ npm run publish:ts
 
 # generate static project
 $ npm run generate
