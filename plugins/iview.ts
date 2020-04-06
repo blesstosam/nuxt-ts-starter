@@ -1,10 +1,11 @@
 import Vue from 'vue';
 
-import { Page, Card } from 'view-design'; // 引入自己用到的组件
+import { Page, Card, Button } from 'view-design'; // 引入自己用到的组件
 
 const components = {
   Page,
   Card,
+  Button,
 };
 
 function install(components: { [k: string]: any }) {

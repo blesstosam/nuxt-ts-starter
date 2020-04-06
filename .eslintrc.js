@@ -185,5 +185,9 @@ module.exports = {
      * 禁止使用 any
      */
     '@typescript-eslint/no-explicit-any': 'off',
+    /**
+     * 在声明const变量的时候不需要声明类型
+     */
+    '@typescript-eslint/consistent-type-assertions': 'off'
   },
 }

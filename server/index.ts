@@ -2,6 +2,7 @@ import Koa from 'koa';
 import Router from 'koa-router';
 import { useUser } from './router/use-user';
 import { initMiddlewre } from './middleware/index';
+import { initDb } from './db/index';
 const consola = require('consola');
 const { Nuxt, Builder } = require('nuxt');
 
@@ -16,6 +17,9 @@ initMiddlewre(app);
 
 useUser(router);
 app.use(router.routes()).use(router.allowedMethods());
+
+// init db
+initDb();
 
 const config = require('../nuxt.config.js');
 config.dev = app.env !== 'production';

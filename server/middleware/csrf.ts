@@ -23,6 +23,8 @@ export function csrfMiddleware(app: Koa): Middleware {
     //   return next();
     // }
 
+    // todo 增加一个配置开关 可以开启和关闭csrf
+
     await csrf(ctx, next);
 
     // 将 csrf 挂载到req对象上 nuxt才能访问

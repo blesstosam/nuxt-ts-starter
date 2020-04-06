@@ -24,8 +24,4 @@ export function initI18n(app: Koa) {
       ],
     })
   );
-
-  // app.use(function (ctx) {
-  //   ctx.body = ctx.i18n.__('title');
-  // })
 }

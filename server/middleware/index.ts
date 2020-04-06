@@ -4,6 +4,7 @@ import { koaRes } from './api-res';
 import { sessionMiddleware } from './session';
 import { initI18n } from './i18n';
 import { csrfMiddleware } from './csrf';
+import { createRateLimiter } from './rate-limit';
 
 export function initMiddlewre(app: Koa) {
   app.use(bodyParser());
@@ -27,6 +28,11 @@ export function initMiddlewre(app: Koa) {
    * 客户端存储在vuex里 每次发送请求都从state里获取csrfToken 发送到服务端验证
    */
   app.use(csrfMiddleware(app));
+
+  /**
+   * 限制接口调用次数
+   */
+  app.use(createRateLimiter({}));
 
   initI18n(app);
 }
