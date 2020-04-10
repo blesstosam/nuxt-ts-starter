@@ -39,7 +39,7 @@
     "@typegoose/typegoose": "6.4.0",
     "axios": "0.19.2",
     "cross-env": "7.0.0",
-    "dayjs": "1.8.23",
+    "dayjs": "1.8.24",
     "dotenv": "8.2.0",
     "dottie": "2.0.2",
     "json-stringify-safe": "5.0.1",
