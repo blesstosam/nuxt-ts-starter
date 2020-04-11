@@ -5,6 +5,7 @@ import { sessionMiddleware } from './session';
 import { initI18n } from './i18n';
 import { csrfMiddleware } from './csrf';
 import { createRateLimiter } from './rate-limit';
+import { csp } from './csp';
 
 export function initMiddlewre(app: Koa) {
   app.use(bodyParser());
@@ -33,6 +34,12 @@ export function initMiddlewre(app: Koa) {
    * 限制接口调用次数
    */
   app.use(createRateLimiter({}));
+
+  /**
+   * csp
+   */
+  app.use(csp())
+
 
   initI18n(app);
 }

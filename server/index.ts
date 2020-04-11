@@ -40,11 +40,22 @@ async function start() {
     await builder.build();
   }
 
+  // nuxt处理请求渲染成字符串的中间件
   app.use((ctx: any) => {
     ctx.status = 200;
+
+    // 该设置会绕过koa的response对象 所以在该中间件后面的中间件都无效
+    // 所以其他中间件都需要放到前面
     ctx.respond = false; // Bypass Koa's built-in response handling
+
+    // 将原生ctx对象挂载到req上 可以在nuxt的ctx上访问koa原生上下文 => context(Nuxt).req.ctx
     ctx.req.ctx = ctx; // This might be useful later on, e.g. in nuxtServerInit or with nuxt-stash
     nuxt.render(ctx.req, ctx.res);
+
+    // 在给csp的header赋值的时候 需要判断响应类型为text/html才设置
+    // 默认的是没有设置的
+    // 经过nuxt.render 渲染的都是html
+    // ctx.type = 'text/html';
   });
 
   app.listen(port, host);

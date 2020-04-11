@@ -5,6 +5,7 @@
     <h3>{{ user }}</h3>
 
     <Button @click="register">Register</Button><br />
+    <img src="../assets/1.png" />
     <nuxt-link to="/">Index</nuxt-link>
   </div>
 </template>

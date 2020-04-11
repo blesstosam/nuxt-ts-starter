@@ -34,12 +34,11 @@ export function sessionMiddleware(app: Koa, cfg: SessionCfg = {}): Middleware {
     ...cfg,
   };
 
-  app.use(async (ctx, next) => {
-    // 将 session 挂载到req上 这样就能通过 nuxt 的 ctx 对象访问session
-    // @ts-ignore
-    ctx.req.session = ctx.session;
-    await next();
-  });
+  // app.use(async (ctx, next) => {
+  //   let n = ctx.session.views || 0;
+  //   ctx.session.views = ++n;
+  //   await next();
+  // });
 
   // or if you prefer all default config, just use => app.use(session(app));
   return session(CONFIG, app);

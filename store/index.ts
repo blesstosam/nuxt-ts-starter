@@ -59,11 +59,15 @@ export const actions: ActionTree<RootState, RootState> = {
   // 但是koa里使用koa-session，session在ctx.session上。在nuxtServerInit里获取不到ctx,
   // 那么解决方案就是在render的前面把ctx.session给req.session就好了。
 
-  // 同样 在 csrf中间件里将csrf挂载到req上 才能访问得到
+  // 官方解决方案
+  // 在server/index.ts里 将koa的ctx挂载到req对象上 而nuxt的context可以访问req对象
+  // 所以通过context(Nuxt).req.ctx 访问koa原生的ctx对象
   nuxtServerInit({ commit }, { req }) {
-    // console.log('.. nuxtServerInit', '++++++++', req.csrf);
+    // 获取koa原生对象
+    const koaCtx = req.ctx;
+    // console.log('.. nuxtServerInit', '++++++++', koaCtx.csrf, koaCtx.session.views);
     // 将 csrf 传递给客户端
-    commit('UPDATE_CSRF_TOKEN', req.csrf || '');
+    commit('UPDATE_CSRF_TOKEN', koaCtx.csrf || '');
     // commit('UPDATE_USER', { username: '999', isAdmin: true });
   },
 };
