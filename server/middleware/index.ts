@@ -38,8 +38,7 @@ export function initMiddlewre(app: Koa) {
   /**
    * csp
    */
-  app.use(csp())
-
+  app.use(csp());
 
   initI18n(app);
 }
