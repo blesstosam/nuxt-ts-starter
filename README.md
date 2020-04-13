@@ -11,6 +11,7 @@
 - Complete Typescript development experience
 - I18n both in server or client
 - CSRF support
+- Csp support
 - Session support
 - Rate limit support
 
