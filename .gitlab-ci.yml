@@ -26,7 +26,7 @@ job_install_deps:
   stage: install_deps
   # 匹配使用哪个tag的runner(注册时填写的)
   tags:
-    - xxgd
+    - xx
   only:
     # 在merge request的时候运行job 但是要求gitlab版本比较高
     # Pipelines for merge requests have the following requirements and limitations:
@@ -43,7 +43,7 @@ job_install_deps:
 job_test:
   stage: test
   tags:
-    - xxgd
+    - xx
   only:
     - merge_requests
   script:
@@ -55,7 +55,7 @@ job_build:
   stage: build
   # 匹配使用哪个tag的runner
   tags:
-    - xxgd
+    - xx
   # 所有操作只在如下分支上进行
   only:
     - master
@@ -79,7 +79,7 @@ job_build:
 job_deploy_test:
   stage: deploy_test
   tags:
-    - xxgd
+    - xx
   only:
     - dev
   script:
