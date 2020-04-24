@@ -60,7 +60,7 @@
     "typescript": "3.8.3",
     "uuid": "7.0.3",
     "view-design": "4.2.0",
-    "vue-property-decorator": "8.4.1",
+    "vue-property-decorator": "8.4.2",
     "winston": "3.2.1"
   },
   "devDependencies": {
