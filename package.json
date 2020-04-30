@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-build": "0.6.6",
-    "@typegoose/typegoose": "6.4.0",
+    "@typegoose/typegoose": "7.0.0",
     "@types/uuid": "7.0.2",
     "axios": "0.19.2",
     "cross-env": "7.0.0",
