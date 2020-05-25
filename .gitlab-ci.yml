@@ -7,7 +7,7 @@ stages:
 #  - deploy_production
 
 # node 版本
-image: node:11.10.1
+image: node:11.15.0
 
 # 缓存（默认情况下，每个pipelines和jobs中可以共享一切，从GitLab 9.0开始）
 cache:
