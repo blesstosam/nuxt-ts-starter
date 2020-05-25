@@ -44,7 +44,7 @@
     "dotenv": "8.2.0",
     "dottie": "2.0.2",
     "json-stringify-safe": "5.0.1",
-    "koa": "2.11.0",
+    "koa": "2.12.0",
     "koa-bodyparser": "4.3.0",
     "koa-csrf": "3.0.8",
     "koa-i18n": "2.1.0",
