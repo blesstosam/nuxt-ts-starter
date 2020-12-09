@@ -39,7 +39,7 @@
     "@typegoose/typegoose": "7.1.1",
     "@types/uuid": "7.0.3",
     "axios": "0.19.2",
-    "cross-env": "7.0.0",
+    "cross-env": "7.0.3",
     "dayjs": "1.8.25",
     "dotenv": "8.2.0",
     "dottie": "2.0.2",
