@@ -37,7 +37,7 @@
   "dependencies": {
     "@nuxt/typescript-build": "0.6.6",
     "@typegoose/typegoose": "7.1.1",
-    "@types/uuid": "7.0.3",
+    "@types/uuid": "8.3.4",
     "axios": "0.19.2",
     "cross-env": "7.0.0",
     "dayjs": "1.8.25",
@@ -58,7 +58,7 @@
     "nuxt": "2.12.2",
     "sha256": "0.2.0",
     "typescript": "3.8.3",
-    "uuid": "7.0.3",
+    "uuid": "8.3.2",
     "view-design": "4.2.0",
     "vue-property-decorator": "8.4.2",
     "winston": "3.2.1"
