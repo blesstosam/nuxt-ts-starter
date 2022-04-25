@@ -38,7 +38,7 @@
     "@nuxt/typescript-build": "0.6.6",
     "@typegoose/typegoose": "7.1.1",
     "@types/uuid": "7.0.3",
-    "axios": "0.19.2",
+    "axios": "0.21.1",
     "cross-env": "7.0.0",
     "dayjs": "1.8.25",
     "dotenv": "8.2.0",
