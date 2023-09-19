@@ -40,7 +40,7 @@
     "@types/uuid": "7.0.3",
     "axios": "0.19.2",
     "cross-env": "7.0.0",
-    "dayjs": "1.8.25",
+    "dayjs": "1.11.10",
     "dotenv": "8.2.0",
     "dottie": "2.0.2",
     "json-stringify-safe": "5.0.1",
