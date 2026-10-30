@@ -42,7 +42,7 @@
     "cross-env": "7.0.0",
     "dayjs": "1.8.25",
     "dotenv": "8.2.0",
-    "dottie": "2.0.2",
+    "dottie": "2.0.7",
     "json-stringify-safe": "5.0.1",
     "koa": "2.12.0",
     "koa-bodyparser": "4.3.0",
@@ -66,7 +66,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "1.0.2",
     "@nuxtjs/eslint-module": "1.1.0",
-    "@types/dottie": "2.0.3",
+    "@types/dottie": "2.0.7",
     "@types/json-stringify-safe": "5.0.0",
     "@types/koa": "2.11.3",
     "@types/koa-bodyparser": "4.3.0",
